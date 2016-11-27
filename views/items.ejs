@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>对比结果</title>
+    <style>
+    </style>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row"><a href='/' target='_self'>返回</a></div>
+      <%if(items.length>0){%>
+        <% items.forEach(function(item){ %>
+            <div class="row">
+                <span class="label label-primary"><%=item.ip %></span>
+                <span class="label label-primary"><%=item.md5 %></span>
+            </div><br/>
+        <% })%>
+       <% }%>
+    </div>
+  </body>
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+
+  });
+</script>
+</html>

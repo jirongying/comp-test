@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="my Icon" href="favicon.ico" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <style>
+       .search{
+          font-size: 22px
+       }
+    </style>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5">
+          <form id="form-action" action="/compare" method="post">
+            <div class="form-group">
+              <span>url:</span><input type="text" id="url" class="form-control"  name="url" placeholder="" / >
+              <span>host:</span><input type="text" id="host" class="form-control"  name="host" placeholder="" />
+              <span>servers:</span><input type="text" id="servers" class="form-control"  name="servers" placeholder="" />
+            </div>
+          </form>
+        </div>
+        <div class="row col-md-4">
+            <button class="btn btn-primary" >对比</button>
+        </div>
+      </div>
+      <div>  demo ： <br/>
+             url : http://coll.jd.com/list.html?sub=7106 <br/>
+             host : coll.jd.com <br/>
+             servers : 10.191.1.79,10.190.4.152,10.190.4.153,10.190.4.154,10.190.4.155
+      </div>
+      <div style="position: relative;text-align: center;margin-top: 200px">jd auto test  </div>
+    </div>
+  </body>
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $(".btn-primary").click(function(){
+        if($('#url').val().length == 0){
+          alert('请填写url');
+          return
+        }
+        if($('#host').val().length == 0){
+            alert('请填写host');
+            return
+        }
+        if($('#servers').val().length == 0){
+            alert('请填写servers');
+            return
+        }
+        $("#form-action").submit();
+    });
+  });
+</script>
+</html>
