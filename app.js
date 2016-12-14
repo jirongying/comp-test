@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 
 var config = require('./config.js');
 var routes = require('./routes/index');
+var apis = require('./routes/mockjson');
 
 var app = express();
 
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/api', apis);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
